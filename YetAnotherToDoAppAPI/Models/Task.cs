@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using YetAnotherTodoApp.Validations;
 
 namespace YetAnotherTodoApp;
 
@@ -6,18 +7,18 @@ public class Task
 {
     public int Id { get; set; }
 
-    [Required]
-    [MinLength(1)]
+    [Required, MinLength(4), MaxLength(25)]
     public string Title { get; set; } = null!;
 
+    [MaxLength(250)]
     public string? Description { get; set; }
 
     public bool IsCompleted { get; set; } = false;
 
     public bool IsPrioritized { get; set; } = false;
 
-    public DateTime CreatedOn { get; } = DateTime.Now;
+    public DateOnly CreatedOn { get; } = DateOnly.FromDateTime(DateTime.Now);
 
-    [Required]
-    public DateTime DueDate { get; set; }
+    [DataType(DataType.Date), TaskDueDate]
+    public DateOnly DueDate { get; set; } = DateOnly.FromDateTime(DateTime.Now);
 }

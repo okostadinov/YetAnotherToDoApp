@@ -10,23 +10,27 @@ public class InMemoryTaskService : ITasksService
         _tasks = [
             new Task {Id = 1, Title = "mock task A", Description = "this is a test task", DueDate = new(2025, 01, 01) },
             new Task {Id = 2, Title = "mock task B", DueDate = new(2024, 12, 31) },
-            new Task {Id = 3, Title = "prioritized task", IsPrioritized = true, DueDate = new(2024, 06, 06) },
+            new Task {Id = 3, Title = "prioritized task A", IsPrioritized = true, DueDate = new(2024, 06, 06) },
+            new Task {Id = 4, Title = "prioritized task B", IsPrioritized = true, DueDate = new(2024, 05, 05) },
         ];
         _nextId = _tasks.Count + 1;
     }
 
     public List<Task> GetAll() => _tasks;
 
-    public List<Task> GetCompleted() => _tasks.Where(t => t.IsCompleted).ToList();
+    public List<Task> GetCompleted() =>
+        _tasks.Where(t => t.IsCompleted).ToList();
 
-    public List<Task> GetPrioritized() => _tasks.Where(t => t.IsPrioritized).ToList();
+    public List<Task> GetPrioritized() =>
+        _tasks.Where(t => t.IsPrioritized).OrderBy(t => t.DueDate).ToList();
 
-    public Task? GetById(int id) => _tasks.SingleOrDefault(t => t.Id == id);
+    public Task? GetById(int id) =>
+        _tasks.SingleOrDefault(t => t.Id == id);
 
     public void Create(Task task)
     {
+        task.Id = _nextId++;
         _tasks.Add(task);
-        _nextId++;
     }
 
     public void Update(int id, Task task)

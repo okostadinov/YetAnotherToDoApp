@@ -1,0 +1,35 @@
+@host = http://localhost:5205
+
+###
+GET {{host}}/api/tasks
+
+###
+GET {{host}}/api/tasks/completed
+
+###
+GET {{host}}/api/tasks/prioritized
+
+###
+GET {{host}}/api/tasks/6
+
+###
+POST {{host}}/api/tasks
+Content-Type: application/json
+
+{
+    "title": "another another test",
+    "dueDate": "2022-01-01"
+}
+
+###
+PUT {{host}}/api/tasks/1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "title": "updated",
+    "dueDate": "2024-05-05"
+}
+
+###
+DELETE {{host}}/api/tasks/5
