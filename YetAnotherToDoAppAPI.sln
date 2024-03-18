@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YetAnotherToDoAppAPI", "YetAnotherToDoAppAPI\YetAnotherToDoAppAPI.csproj", "{B5551D1D-9C51-40EE-BBC2-6431E5AF8805}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YetAnotherToDoAppAPITest", "YetAnotherToDoAppAPITest\YetAnotherToDoAppAPITest.csproj", "{F6C68C83-0621-4934-8E15-9B3837F93CBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{B5551D1D-9C51-40EE-BBC2-6431E5AF8805}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5551D1D-9C51-40EE-BBC2-6431E5AF8805}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5551D1D-9C51-40EE-BBC2-6431E5AF8805}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6C68C83-0621-4934-8E15-9B3837F93CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6C68C83-0621-4934-8E15-9B3837F93CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6C68C83-0621-4934-8E15-9B3837F93CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6C68C83-0621-4934-8E15-9B3837F93CBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

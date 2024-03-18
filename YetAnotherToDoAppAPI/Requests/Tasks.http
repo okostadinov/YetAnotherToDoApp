@@ -18,7 +18,8 @@ Content-Type: application/json
 
 {
     "title": "another another test",
-    "dueDate": "2022-01-01"
+    "isPrioritized": true,
+    "dueDate": "2025-01-01"
 }
 
 ###

@@ -49,7 +49,7 @@ public class TasksController : ControllerBase
         if (id != task.Id)
             return BadRequest("Task ID does not match target");
 
-        var taskToUpdate = GetById(id);
+        var taskToUpdate = _service.GetById(id);
         if (taskToUpdate is null) return NotFound();
 
         _service.Update(id, task);
